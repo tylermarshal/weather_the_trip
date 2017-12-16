@@ -13,7 +13,7 @@ class DestinationsController < ApplicationController
   def create
     @destination = Destination.create(destination_params)
     if @destination.save
-      flash.notice = "Created @destination.name"
+      flash.notice = "Created #{@destination.name}"
 
       redirect_to destination_path(@destination)
     else
@@ -32,14 +32,14 @@ class DestinationsController < ApplicationController
     @destination.update(destination_params)
     @destination.save
 
-    flash.notice = "Updated @destination.name"
+    flash.notice = "Updated #{@destination.name}"
 
     redirect_to destination_path(@destination)
   end
 
   def destroy
     @destination.destroy
-    flash.notice = "Deleted @destination.name"
+    flash.notice = "Deleted #{@destination.name}"
   end
 
   private
