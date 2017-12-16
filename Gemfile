@@ -42,6 +42,10 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'factory_bot_rails'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
