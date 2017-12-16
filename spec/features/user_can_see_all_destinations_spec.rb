@@ -5,6 +5,6 @@ describe "When a user visits the destinations index page" do
     destination_1 = create(:destination)
     require "pry"; binding.pry
 
-    expect(page).to have_content("Destination1")
+    expect(page).to have_content(destination_1.name)
   end
 end
