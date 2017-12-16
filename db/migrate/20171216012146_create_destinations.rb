@@ -6,6 +6,7 @@ class CreateDestinations < ActiveRecord::Migration[5.1]
       t.string :state
       t.decimal :latitude
       t.decimal :longitude
+      t.timestamps
     end
   end
 end
