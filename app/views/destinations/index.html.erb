@@ -1,8 +1,12 @@
-<a href="https://www.accuweather.com/en/us/denver-co/80203/current-weather/347810" class="aw-widget-legal"></a>
-<div class="aw-widget-36hour"  data-locationkey="347810" data-uid="awtd1513389114841"</div>
-<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+<h1>All Destinations</h1>
 
-
-<!-- <a href="https://www.accuweather.com/en/us/minneapolis-mn/55415/current-weather/348794" class="aw-widget-legal"></a>
-<div id="awtd1513389287458" class="aw-widget-36hour"  data-locationkey="348794" data-unit="f" data-language="en-us" data-useip="false" data-uid="awtd1513389287458" data-editlocation="false"></div>
-<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script> -->
+<div class="block-container">
+<% @destinations.sort_by(&:updated_at).reverse.each do |destination| %>
+  <div class="block">
+    <h3><%= link_to destination.name, destination_path(destination) %></h3>
+    <p><%= destination.city %>, <%= destination.state %></p>
+    <p><%= destination.latitude %></p>
+    <p><%= destination.longitude %></p>
+  </div>
+<% end %>
+</div>
