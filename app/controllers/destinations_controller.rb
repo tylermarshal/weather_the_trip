@@ -13,11 +13,11 @@ class DestinationsController < ApplicationController
   def create
     @destination = Destination.create(destination_params)
     if @destination.save
-      flash[:success] = "Created @destination.name"
+      flash.notice = "Created @destination.name"
 
       redirect_to destination_path(@destination)
     else
-      flash[:notice] = "Please fill out all parts of the form"
+      flash.notice = "Please fill out all parts of the form"
       render :new
     end
   end
@@ -29,14 +29,17 @@ class DestinationsController < ApplicationController
   end
 
   def update
-    @destination.update
+    @destination.update(destination_params)
     @destination.save
+
+    flash.notice = "Updated @destination.name"
 
     redirect_to destination_path(@destination)
   end
 
   def destroy
     @destination.destroy
+    flash.notice = "Deleted @destination.name"
   end
 
   private
