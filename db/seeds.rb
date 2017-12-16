@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+json = ActiveSupport::JSON.decode(File.read('db/seeds/cities.json'))
+
+json.each do |a|
+  Destination.create!(a['destination'], without_protection: true)
+end
