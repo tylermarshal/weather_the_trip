@@ -1,5 +1,5 @@
 class Destination < ApplicationRecord
 
-  validates_presence_of :name, :city, :state, :latitude, :longitude
+  validates_presence_of :city, :state, :latitude, :longitude, :population
 
 end
