@@ -7,8 +7,46 @@ h1 {
   margin: 30px;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e67525;
+  height: 100px;
+}
+nav ul {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  display: flex;
+  align-items: flex-end;
+}
+
+.top-nav-links {
+  color: white;
+  font: {
+    family: sans-serif;
+    size: 25px;
+  }
+}
+
 #destinations-hero {
   background: url(woods.jpeg) no-repeat;
   height: 900px;
-  margin-top: -380px;
+  margin-top: -480px;
+}
+
+#logo {
+  width: auto;
+  height: 100px;
+  padding: 0 0 12.5px 12.5px;
+  margin-left: 50px;
 }
