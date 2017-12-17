@@ -1,10 +1,17 @@
-<h1>Destination: <%= @destination.name %></h1>
+<h1>Destination: <%= @destination.city %></h1>
 
 <div class="block-container">
   <div class="block">
     <p><%= @destination.city %>, <%= @destination.state %></p>
     <p><%= @destination.latitude %></p>
     <p><%= @destination.longitude %></p>
+    <p><%= @destination.population %></p>
   </div>
-<% end %>
 </div>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCpwNZTxj-K23mT_FUH5tjFBKoxUejzyDQ&q=<%= @destination.city.gsub(" ", "+") %>,<%= @destination.state %>" allowfullscreen>
+</iframe>
