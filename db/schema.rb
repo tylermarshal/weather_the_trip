@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20171216012146) do
   enable_extension "plpgsql"
 
   create_table "destinations", force: :cascade do |t|
-    t.string "name"
     t.string "city"
     t.string "state"
     t.decimal "latitude"
     t.decimal "longitude"
+    t.bigint "population"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
