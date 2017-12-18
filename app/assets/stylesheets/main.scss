@@ -45,6 +45,8 @@ a {
   text-decoration: none;
 }
 
+
+
 section {
   display: flex;
   align-items: flex-end;
@@ -59,6 +61,9 @@ iframe {
   font: {
     family: sans-serif;
     size: 18px;
+  }
+  &:hover {
+    color: #e6eaf2;
   }
 }
 

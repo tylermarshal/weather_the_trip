@@ -16,7 +16,7 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @destination = Destination.create(destination_params)
+    @destination = Destination.new(destination_params)
     if @destination.save
       flash.notice = "Created #{@destination.name}"
 
