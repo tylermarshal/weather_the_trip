@@ -3,7 +3,7 @@
     <h1>Destinations</h1>
     <div class="search">
       <%= form_tag(destinations_path, method: :get) do %>
-        <%= text_field_tag :term %>
+        <%= text_field_tag :term, params[:term] %>
         <%= submit_tag 'Search' %>
       <% end %>
     </div>
@@ -13,9 +13,8 @@
 <div class="block-container">
   <% @destinations.sort_by(&:city).each do |destination| %>
     <div class="block">
-      <h3><%= link_to destination.city, destination_path(destination) %></h3>
+      <h4><%= link_to destination.city, destination_path(destination) %></h4>
       <p><%= destination.city %>, <%= destination.state %></p>
-      <p><%= destination.population %></p>
     </div>
   <% end %>
 </div>
