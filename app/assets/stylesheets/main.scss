@@ -7,6 +7,20 @@ h1 {
   margin: 30px;
 }
 
+h3 {
+  font: {
+    family: sans-serif;
+    size: 40px;
+  }
+  margin: 0 0 10px 0;
+}
+
+p {
+  font: {
+    font-family: sans-serif;
+  }
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -27,6 +41,10 @@ a {
 section {
   display: flex;
   align-items: flex-end;
+}
+
+iframe {
+  margin-top: 40px;
 }
 
 .top-nav-links {
@@ -51,6 +69,24 @@ section {
   background: url(rain-tail-lights.jpeg) no-repeat;
   height: 1100px;
   margin-top: -680px;
+}
+
+.block-container {
+  background-color: #dee4ed;
+}
+
+.show-block-container {
+  background-color: #dee4ed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.show-block {
+  font: {
+    family: san-serif;
+    size: 30px;
+  }
 }
 
 #home-h1 {
