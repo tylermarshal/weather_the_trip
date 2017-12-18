@@ -7,9 +7,9 @@ describe "a user can sign up" do
         it "a new user account is created" do
           visit "/"
 
-          click_on "Sign Up"
+          all(".top-nav-links").last.click
 
-          expect(curren_path).to eq(new_user_path)
+          expect(current_path).to eq(new_user_path)
 
           fill_in "user[username]", with: "roadtripper"
           fill_in "user[password]", with: "wegotsnacks&supplies"
