@@ -10,15 +10,14 @@ h1 {
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: #e67525;
   height: 100px;
-}
-nav ul {
-  display: flex;
-  width: 500px;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 50px;
+  ul {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 50px;
+  }
 }
 
 a {
@@ -34,8 +33,32 @@ section {
   color: white;
   font: {
     family: sans-serif;
-    size: 25px;
+    size: 18px;
   }
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.search {
+  margin: 50px 50px 0 0;
+}
+
+#home-h1 {
+  margin: 0 275px 100px 0;
+}
+
+#home-hero {
+  background: url(misty-road.jpeg) no-repeat center center fixed;
+  height: 1050px;
+  margin-top: -300px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #destinations-hero {

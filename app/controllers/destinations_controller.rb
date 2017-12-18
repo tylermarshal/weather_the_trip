@@ -3,8 +3,12 @@ class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
 
   def index
-    @destinations = Destination.all
     # @destinations = Destination.paginate(:page => params[:page], :per_page => 30)
+    @destinations = if params[:term]
+      Destination.search(params[:term])
+    else
+      Destination.all
+    end
   end
 
   def new
@@ -50,7 +54,7 @@ class DestinationsController < ApplicationController
     end
 
     def destination_params
-      params.require(:destination).permit(:name, :city, :state, :latitude, :longitude)
+      params.require(:destination).permit(:name, :city, :state, :latitude, :longitude, :term)
     end
 
 end
