@@ -3,11 +3,11 @@ class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @destinations = Destination.paginate(:page => params[:page], :per_page => 30)
     @destinations = if params[:term]
       Destination.search(params[:term])
+      .paginate(:page => params[:page], :per_page => 30)
     else
-      Destination.all
+      Destination.paginate(:page => params[:page], :per_page => 30)
     end
   end
 
@@ -22,7 +22,7 @@ class DestinationsController < ApplicationController
 
       redirect_to destination_path(@destination)
     else
-      flash.notice = "Please fill out all parts of the form"
+      flash.notice = "Please fill out all parts of the form correctly"
       render :new
     end
   end
