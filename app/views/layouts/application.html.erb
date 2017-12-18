@@ -7,18 +7,23 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-  <nav>
-  <a href="/"><img id="logo" src="/assets/logo.png"></a>
-    <ul>
-      <li><%= link_to "Destinations", destinations_path, class: "top-nav-links" %></li>
-      <li class="top-nav-links">All Trips</li>
-      <li class="top-nav-links">Your Trips</li>
-      <li class="top-nav-links">Login</li>
-      <li class="top-nav-links">Sign Up</li>
-    </ul>
-</nav>
 
   <body>
+    <nav>
+      <a href="/"><img id="logo" src="/assets/logo.png"></a>
+      <ul>
+        <li><%= link_to "Destinations", destinations_path, class: "top-nav-links" %></li>
+        <li class="top-nav-links">All Trips</li>
+        <li class="top-nav-links">Your Trips</li>
+        <li class="top-nav-links">Login</li>
+        <li class="top-nav-links">Sign Up</li>
+      </ul>
+    </nav>
+    <div class="flash-container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "flash-message" %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
