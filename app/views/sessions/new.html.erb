@@ -1,9 +1,22 @@
-<%= form_tag do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+<div id="log-in-hero">
+  <div class="authentication-container">
+    <div class="authentication-form">
+      <h1>Log In</h1>
+      <%= form_tag do %>
+        <div>
+          <%= label_tag :username %>
+          <%= text_field_tag :username %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
 
-  <%= submit_tag "Login", class: "submit-button" %>
-<% end %>
+        <div>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
+
+        <div>
+          <%= submit_tag "Login", class: "submit-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

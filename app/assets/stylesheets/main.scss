@@ -131,7 +131,7 @@ iframe {
 }
 
 .authentication-container {
-  margin-right: 8%;
+  margin: 13% 8% 0 0;
 }
 
 #home-h1 {
@@ -150,6 +150,17 @@ iframe {
 
 #sign-up-hero {
   background: url(sign-up.jpeg) no-repeat center center fixed;
+  height: 1050px;
+  margin-top: -300px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#log-in-hero {
+  background: url(log-in.jpeg) no-repeat center center fixed;
   height: 1050px;
   margin-top: -300px;
   background-size: cover;
