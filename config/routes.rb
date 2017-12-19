@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :trips
   end
 
-  scope :admin, module: :admin, as: :admin, only: [:new, :create, :edit, :update, :destroy] do
+  namespace :admin, only: [:new, :create, :edit, :update, :destroy] do
     resources :destinations
   end
 
