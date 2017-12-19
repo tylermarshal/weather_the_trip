@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :password, presence: true
   has_many :trips, dependent: :destroy
   has_secure_password
+  enum role: ["default", "admin"]
 end
