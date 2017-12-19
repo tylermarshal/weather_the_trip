@@ -180,6 +180,17 @@ iframe {
   align-items: center;
 }
 
+#new-trip-hero {
+  background: linear-gradient(rgba(0, 0, 0, .45),rgba(0, 0, 0, .45)), image-url(maps) no-repeat center center fixed;
+  height: 1050px;
+  margin-top: -300px;
+  flex-direction: column;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #sign-up-hero {
   background: image-url(sign-up) no-repeat center center fixed;
   height: 1050px;

@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     resources :destinations
   end
 
-  resources :destinations, only: [:index, :show]
+  resources :destinations, only: [:index, :show] do
+    resources :routes, only: [:create, :destroy]
+  end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

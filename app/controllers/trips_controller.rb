@@ -17,6 +17,8 @@ class TripsController < ApplicationController
     @trip = current_user.trips.new(trip_params)
     if @trip.save
       flash.notice = "Trip #{@trip.name} has been started."
+      session[:trip_id] = @trip.id
+
       redirect_to user_trip_path(current_user, @trip)
     else
       flash.notice = "Please enter all of the information require to start a trip."
@@ -25,6 +27,9 @@ class TripsController < ApplicationController
   end
 
   def edit
+    session[:trip_id] = @trip.id
+
+    redirect_to destinations_path
   end
 
   def update
