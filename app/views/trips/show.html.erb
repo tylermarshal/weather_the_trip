@@ -1,1 +1,11 @@
-<span></span>
+<h1>Trip: <%= @trip.name %></h1>
+
+<% if @trip.nil? %>
+  <p>This trip has no destinations.</p>
+<% else %>
+  <% @trip.destinations.each do |destination| %>
+    <p><%= destination.city %>, <%= destination.state %></p><br>
+  <% end %>
+<% end %>
+
+<%= link_to "Add Destinations to Trip", edit_user_trip_path %>

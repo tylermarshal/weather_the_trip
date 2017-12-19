@@ -15,7 +15,7 @@
     <div class="block">
       <h4><%= link_to destination.city, destination_path(destination) %></h4>
       <p><%= destination.city %>, <%= destination.state %></p>
-      <p><%= link_to "Add to Trip", destination_routes(destination) %></p>
+      <p><%= link_to "Add to Trip", destination_routes_path(destination), method: :post %></p>
       <% if current_admin? %>
         <p><%= link_to "Edit", edit_admin_destination_path(destination) %></p>
         <p><%= link_to "Delete", destination_path(destination), method: "delete", data: {confirm: "Really delete this destination?"} %></p>
