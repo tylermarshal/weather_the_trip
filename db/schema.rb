@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218195629) do
+ActiveRecord::Schema.define(version: 20171219011108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,9 +25,25 @@ ActiveRecord::Schema.define(version: 20171218195629) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "routes", force: :cascade do |t|
+    t.bigint "destination_id"
+    t.bigint "trip_id"
+    t.index ["destination_id"], name: "index_routes_on_destination_id"
+    t.index ["trip_id"], name: "index_routes_on_trip_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_trips_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
   end
 
+  add_foreign_key "routes", "destinations"
+  add_foreign_key "routes", "trips"
+  add_foreign_key "trips", "users"
 end
