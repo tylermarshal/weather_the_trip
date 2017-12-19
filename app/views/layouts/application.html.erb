@@ -14,8 +14,9 @@
       <ul>
         <li><%= link_to "Home", root_path, class: "top-nav-links" %></li>
         <li><%= link_to "Destinations", destinations_path, class: "top-nav-links" %></li>
-        <li class="top-nav-links">Your Trips</li>
       <% if logged_in? %>
+        <li><%= link_to "Your Trips", user_trips_path, class: "top-nav-links" %></li>
+        <li><%= link_to "Create Trip", new_user_trip_path(current_user), class: "top-nav-links" %></li>
         <li><%= link_to "Profile", user_path(current_user), class: "top-nav-links" %></li>
         <li><%= link_to "Logout", logout_path, method: :delete, class: "top-nav-links" %></li>
       <% else %>
