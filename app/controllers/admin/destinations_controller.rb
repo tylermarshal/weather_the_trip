@@ -1,24 +1,49 @@
 class Admin::DestinationsController < Admin::BaseController
 
-def new
+    before_action :set_destination, only: [:edit, :update, :destroy]
 
-end
+  def new
+    @destination = Destination.new
+  end
 
-def create
+  def create
+    @destination = Destination.new(destination_params)
+    if @destination.save
+      flash.notice = "Created #{@destination.name}"
 
-end
+      redirect_to destination_path(@destination)
+    else
+      flash.notice = "Please fill out all parts of the form correctly"
+      render :new
+    end
+  end
 
-def edit
+  def edit
+  end
 
-end
+  def update
+    @destination.update(destination_params)
+    @destination.save
 
-def update
+    flash.notice = "Updated #{@destination.name}"
 
-end
+    redirect_to destination_path(@destination)
+  end
 
-def destroy
+  def destroy
+    @destination.destroy
+    flash.notice = "Deleted #{@destination.name}"
+  end
 
-end
+private
+
+  def set_destination
+    @destination = Destination.find(params[:id])
+  end
+
+  def destination_params
+    params.require(:destination).permit(:name, :city, :state, :latitude, :longitude, :term)
+  end
 
 
 end
