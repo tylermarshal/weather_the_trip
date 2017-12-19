@@ -1,0 +1,21 @@
+<section id="trips-hero">
+  <div class="space-between">
+    <h1>Your Trips</h1>
+    <p><%= link_to "Start a New Trip", new_user_trip_path, class: "hero-link" %></p>
+  </div>
+</section>
+
+<div class="block-container">
+  <% if @trips.empty? %>
+  <div class="center">
+    <h4>Start the Trip of a Lifetime!</h4>
+    <p style="margin-top: 5px;">Click on "Start a New Trip"</p>
+  </div>
+  <% else %>
+    <% @trips.each do |trip| %>
+      <div class="block">
+        <h4><%= link_to trip.name, user_trip_destination_path(current_user, trip) %></h4>
+      </div>
+    <% end %>
+  <% end %>
+</div>

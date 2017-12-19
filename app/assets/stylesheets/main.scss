@@ -33,7 +33,7 @@ h5 {
 
 p {
   font: {
-    font-family: sans-serif;
+    family: sans-serif;
   }
 }
 
@@ -74,10 +74,27 @@ iframe {
   }
 }
 
+.hero-link {
+  font: {
+    family: sans-serif;
+    size: 35px;
+  }
+  color: white;
+  margin: 0 25px 0 0;
+}
+
 .space-between {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 5%;
 }
 
 .search {
@@ -91,10 +108,11 @@ iframe {
 }
 
 .block-container {
-  background-color: #dee4ed;
   display: flex;
   flex-flow: row wrap;
-
+  border: 2px solid #e1e3e8;
+  border-radius: 3px;
+  margin: 3% 10% 3% 10%;
 }
 
 .block {
@@ -104,7 +122,6 @@ iframe {
 }
 
 .show-block-container {
-  background-color: #dee4ed;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -189,6 +206,12 @@ iframe {
   background: image-url(skyline) no-repeat;
   height: 1200px;
   margin-top: -780px;
+}
+
+#trips-hero {
+  background: image-url(woods) no-repeat;
+  height: 900px;
+  margin-top: -480px;
 }
 
 #logo {
