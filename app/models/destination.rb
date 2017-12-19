@@ -1,6 +1,8 @@
 class Destination < ApplicationRecord
 
   validates_presence_of :city, :state, :latitude, :longitude, :population
+  has_many :routes
+  has_many :trips, through: :routes
 
   def self.search(term)
     dest = Destination.arel_table
