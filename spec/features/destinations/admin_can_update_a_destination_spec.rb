@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "user visits destinations new page" do
+describe "user visits destinations edit page" do
   context "as an admin" do
-    it "allows admin to create destinations" do
+    it "allows admin to edit destinations" do
       admin = create(:user, role: 1)
       destination = create(:destination)
 
@@ -26,7 +26,7 @@ describe "user visits destinations new page" do
     end
   end
   context "as a default user" do
-    it "does not allow default user to see admin create destinations page" do
+    it "does not allow default user to see admin edit destinations page" do
       user = create(:user)
       destination = create(:destination)
 
