@@ -4,7 +4,7 @@ class RoutesController < ApplicationController
     @route = Routes.new(destination_id: params[:destination_id], trip_id: current_trip.id)
     if @route.save
       flash.notice = "Destination Added to Trip"
-      redirect_to destinations_path
+      redirect_back(fallback_location: destinations_path)
     end
   end
 
