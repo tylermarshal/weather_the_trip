@@ -32,6 +32,8 @@ class Admin::DestinationsController < Admin::BaseController
   def destroy
     @destination.destroy
     flash.notice = "Deleted #{@destination.city}, #{@destination.state}"
+
+    redirect_to destinations_path
   end
 
 private
