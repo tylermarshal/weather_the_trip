@@ -4,10 +4,10 @@ class DestinationsController < ApplicationController
 
   def index
     @destinations = if params[:term]
-      Destination.search(params[:term])
+      Destination.all.sort_city.search(params[:term])
       .paginate(:page => params[:page], :per_page => 30)
     else
-      Destination.paginate(:page => params[:page], :per_page => 30)
+      Destination.all.sort_city.paginate(:page => params[:page], :per_page => 30)
     end
   end
 

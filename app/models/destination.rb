@@ -10,6 +10,6 @@ class Destination < ApplicationRecord
   end
 
   def self.sort_city
-    all.sort_by(&:city)
+    order("city ASC")
   end
 end

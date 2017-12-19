@@ -11,7 +11,7 @@
 </section>
 
 <div class="block-container">
-  <% @destinations.sort_city.each do |destination| %>
+  <% @destinations.each do |destination| %>
     <div class="block">
       <h4><%= link_to destination.city, destination_path(destination) %></h4>
       <p><%= destination.city %>, <%= destination.state %></p>
