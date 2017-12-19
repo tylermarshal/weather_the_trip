@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
+  def current_admin?
+    current_user && current_user.admin?
+  end
+
   def current_trip
     # @current_trip ||= User.trips
     # create new trip and then edit the trip with new destiantions
