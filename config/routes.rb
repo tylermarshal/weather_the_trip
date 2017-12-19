@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post '/destinations', to: "admin/destinations#create"
   delete '/destinations/:id', to: "admin/destinations#destroy"
+  patch '/destinations/:id', to: "admin/destinations#update"
   put '/destinations/:id', to: "admin/destinations#update"
 
   resources :users, only: [:show, :new, :create] do

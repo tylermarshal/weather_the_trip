@@ -9,7 +9,7 @@ class Admin::DestinationsController < Admin::BaseController
   def create
     @destination = Destination.new(destination_params)
     if @destination.save
-      flash.notice = "Created #{@destination.city}"
+      flash.notice = "Created #{@destination.city}, #{@destination.state}"
       redirect_to destination_path(@destination)
     else
       flash.notice = "Please fill out all parts of the form correctly"
@@ -24,14 +24,14 @@ class Admin::DestinationsController < Admin::BaseController
     @destination.update(destination_params)
     @destination.save
 
-    flash.notice = "Updated #{@destination.name}"
+    flash.notice = "Updated #{@destination.city}, #{@destination.state}"
 
     redirect_to destination_path(@destination)
   end
 
   def destroy
     @destination.destroy
-    flash.notice = "Deleted #{@destination.name}"
+    flash.notice = "Deleted #{@destination.city}, #{@destination.state}"
   end
 
 private
