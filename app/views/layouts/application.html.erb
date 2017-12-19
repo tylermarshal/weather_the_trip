@@ -16,7 +16,7 @@
         <li><%= link_to "Destinations", destinations_path, class: "top-nav-links" %></li>
         <li class="top-nav-links">Your Trips</li>
       <% if logged_in? %>
-        <li><%= link_to "Profile", user_path, class: "top-nav-links" %></li>
+        <li><%= link_to "Profile", user_path(current_user), class: "top-nav-links" %></li>
         <li><%= link_to "Logout", logout_path, method: :delete, class: "top-nav-links" %></li>
       <% else %>
         <li><%= link_to "Sign Up", new_user_path, class: "top-nav-links" %></li>
@@ -24,11 +24,11 @@
       <% end %>
       </ul>
     </nav>
+    <%= yield %>
     <div class="flash-container">
       <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, class: "flash-message" %>
+      <%= content_tag :div, msg, class: "flash-message" %>
       <% end %>
     </div>
-    <%= yield %>
   </body>
 </html>
