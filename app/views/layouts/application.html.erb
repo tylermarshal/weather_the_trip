@@ -10,7 +10,7 @@
 
   <body>
     <nav>
-      <a href="/"><img id="logo" src="logo.png"></a>
+      <a href="/"><%= image_tag("logo.png", id: "logo") %></a>
       <ul>
         <li><%= link_to "Home", root_path, class: "top-nav-links" %></li>
         <li><%= link_to "Destinations", destinations_path, class: "top-nav-links" %></li>
