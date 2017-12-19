@@ -1,8 +1,10 @@
-<div id="home-hero">
+<div id="profile-hero">
   <h1 id="home-h1"><%= "Hello, #{current_user.username}!" %></h1>
-  <h3 class="top-nav-links">View Your Trips</h3>
-  <% if current_admin? %>
-  <h3><%= link_to "Create a Destination", new_admin_destination_path %></h3>
-  <% end %>
-  <h3><%= link_to "Logout", logout_path, method: :delete, class: "top-nav-links" %></h3>
+  <div class="profile-link-container">
+    <p><%= link_to "View Your Trips", user_trips_path(current_user), class: "top-nav-links" %></p>
+    <% if current_admin? %>
+    <p><%= link_to "Create a Destination", new_admin_destination_path, class: "top-nav-links" %></p>
+    <% end %>
+    <p><%= link_to "Logout", logout_path, method: :delete, class: "top-nav-links" %></p>
+  </div>
 </div>

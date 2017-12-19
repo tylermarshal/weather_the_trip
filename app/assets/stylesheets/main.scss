@@ -134,8 +134,23 @@ iframe {
   margin: 13% 8% 0 0;
 }
 
+.profile-link-container {
+  margin: 0 25% 0 0;
+}
+
 #home-h1 {
-  margin: 0 275px 100px 0;
+  margin: 0 20% 10px 0;
+}
+
+#profile-hero {
+  background: image-url(misty-road1) no-repeat center center fixed;
+  height: 1050px;
+  margin-top: -300px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #home-hero {
@@ -171,9 +186,9 @@ iframe {
 }
 
 #destinations-hero {
-  background: image-url(woods) no-repeat;
-  height: 900px;
-  margin-top: -480px;
+  background: image-url(skyline) no-repeat;
+  height: 1200px;
+  margin-top: -780px;
 }
 
 #logo {
