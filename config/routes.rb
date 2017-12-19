@@ -5,11 +5,15 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  post '/destinations', to: "admin/destinations#create"
+  delete '/destinations/:id', to: "admin/destinations#destroy"
+  put '/destinations/:id', to: "admin/destinations#update"
+
   resources :users, only: [:show, :new, :create] do
     resources :trips
   end
 
-  namespace :admin, only: [:new, :create, :edit, :update, :destroy] do
+  namespace :admin, only: [:new, :edit] do
     resources :destinations
   end
 

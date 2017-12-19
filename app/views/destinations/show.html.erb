@@ -9,8 +9,8 @@
     <p>Logitude: <%= @destination.longitude %></p>
     <p>Population: <%= @destination.population %></p>
     <% if current_admin? %>
-      <p><%= link_to "Edit", edit_admin_destination_path(destination) %></p>
-      <p><%= link_to "Delete", destination_path(destination), method: "delete", data: {confirm: "Really delete this destination?"} %></p>
+      <p><%= link_to "Edit", edit_admin_destination_path(@destination) %></p>
+      <p><%= link_to "Delete", destination_path(@destination), method: "delete", data: {confirm: "Really delete this destination?"} %></p>
     <% end %>
   </div>
   <iframe

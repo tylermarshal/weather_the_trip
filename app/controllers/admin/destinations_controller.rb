@@ -9,8 +9,7 @@ class Admin::DestinationsController < Admin::BaseController
   def create
     @destination = Destination.new(destination_params)
     if @destination.save
-      flash.notice = "Created #{@destination.name}"
-
+      flash.notice = "Created #{@destination.city}"
       redirect_to destination_path(@destination)
     else
       flash.notice = "Please fill out all parts of the form correctly"
@@ -42,7 +41,7 @@ private
   end
 
   def destination_params
-    params.require(:destination).permit(:name, :city, :state, :latitude, :longitude, :term)
+    params.require(:destination).permit(:name, :city, :state, :latitude, :longitude, :population, :term)
   end
 
 
