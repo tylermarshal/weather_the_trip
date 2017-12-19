@@ -5,6 +5,7 @@
 <% else %>
   <% @trip.destinations.each do |destination| %>
     <p><%= destination.city %>, <%= destination.state %></p><br>
+    <p><%= link_to "Remove From Trip", destination_routes_path(destination), method: :delete %></p>
   <% end %>
 <% end %>
 
