@@ -85,7 +85,7 @@ iframe {
 }
 
 .destination-show-hero {
-  background: url(rain-tail-lights.jpeg) no-repeat;
+  background: image-url(rain-tail-lights) no-repeat;
   height: 1100px;
   margin-top: -680px;
 }
@@ -149,7 +149,7 @@ iframe {
 }
 
 #sign-up-hero {
-  background: url(sign-up.jpeg) no-repeat center center fixed;
+  background: image-url(sign-up) no-repeat center center fixed;
   height: 1050px;
   margin-top: -300px;
   background-size: cover;
@@ -160,7 +160,7 @@ iframe {
 }
 
 #log-in-hero {
-  background: url(log-in.jpeg) no-repeat center center fixed;
+  background: image-url(log-in) no-repeat center center fixed;
   height: 1050px;
   margin-top: -300px;
   background-size: cover;
@@ -171,7 +171,7 @@ iframe {
 }
 
 #destinations-hero {
-  background: url(woods.jpeg) no-repeat;
+  background: image-url(woods) no-repeat;
   height: 900px;
   margin-top: -480px;
 }
