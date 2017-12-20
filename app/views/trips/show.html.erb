@@ -28,6 +28,12 @@
     <% end %>
     <h4><%= link_to "Add Destinations to Trip", edit_user_trip_path %></h4>
   </div>
+  <iframe
+    width="600"
+    height="450"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/directions?key=<%= ENV["gmaps_key"] %>&origin=<%= @trip.destinations.first.city.gsub(" ", "+") %>,<%= @trip.destinations.first.state %>&destination=<%= @trip.destinations[1].city.gsub(" ", "+") %>,<%= @trip.destinations[1].state %>" allowfullscreen>
+  </iframe>
 </div>
 <div class="bottom-right">
   <p><%= link_to "Delete Trip", user_trip_path(current_user, @trip), method: :delete, class: "trip-delete" %></p>
