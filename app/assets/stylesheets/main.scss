@@ -214,7 +214,7 @@ iframe {
 }
 
 #destinations-hero {
-  background: image-url(skyline) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, .15),rgba(0, 0, 0, .15)), image-url(skyline) no-repeat;
   height: 1200px;
   margin-top: -780px;
 }
