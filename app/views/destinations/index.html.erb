@@ -15,7 +15,7 @@
     <div class="block">
       <h4><%= link_to destination.city, destination_path(destination) %></h4>
       <p><%= destination.city %>, <%= destination.state %></p>
-      <% if logged_in? %>
+      <% if logged_in? && current_trip?%>
         <p><%= link_to "Add to Trip", destination_routes_path(destination), method: :post %></p>
       <% end %>
       <% if current_admin? %>
