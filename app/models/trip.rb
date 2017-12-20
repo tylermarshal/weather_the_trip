@@ -1,7 +1,7 @@
 require 'google_maps_service'
 class Trip < ApplicationRecord
   validates_presence_of :name
-  has_many :routes, -> {order "routes.created_at"}
+  has_many :routes, -> {order "routes.created_at"}, dependent: :destroy
   has_many :destinations, through: :routes
   belongs_to :user
 
