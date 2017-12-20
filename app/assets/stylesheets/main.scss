@@ -107,6 +107,12 @@ iframe {
   margin-top: -680px;
 }
 
+.trip-show-hero {
+  background: image-url(virginia) no-repeat;
+  height: 1000px;
+  margin-top: -580px;
+}
+
 .block-container {
   display: flex;
   flex-flow: row wrap;
@@ -125,6 +131,7 @@ iframe {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .show-block {
