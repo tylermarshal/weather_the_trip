@@ -7,24 +7,17 @@ describe "a user creates a trip while logged in" do
         it "creates a a new trip" do
           user = create(:user)
 
-          visit "/"
+          allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-          all(".top-nav-links")[3].click
+          visit new_user_trip_path(user)
 
-          fill_in "username", with: user.username
-          fill_in "password", with: user.password
-
-          first(".submit-button").click
-
-          expect(current_path).to eq(user_path(user))
-
-          all(".top-nav-links")[3].click
-
-          expect(current_path).to eq(new_user_trip_path(user))
-
-          fill_in "name", with: "Trip 1"
+          fill_in "trip[name]", with: "Trip 1"
 
           first(".submit-button").click
+
+          last_trip = Trip.last
+
+          expect(current_path).to eq(user_trip_path(user, last_trip))
 
         end
       end
