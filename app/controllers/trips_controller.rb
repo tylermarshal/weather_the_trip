@@ -21,7 +21,7 @@ class TripsController < ApplicationController
 
       redirect_to user_trip_path(current_user, @trip)
     else
-      flash.notice = "Please enter all of the information require to start a trip."
+      flash.notice = "Please enter all of the information required to start a trip."
       render :new
     end
   end
