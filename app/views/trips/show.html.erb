@@ -14,11 +14,6 @@
         <% @trip.destinations.each do |destination| %>
           <p><%= counter %>: <%= link_to "#{destination.city}, #{destination.state}", destination_path(destination) %></p>
           <p><%= link_to "Remove From Trip", destination_route_path(destination), method: :delete %></p>
-          <% if counter != 1 %>
-            <br>
-          <% else %>
-            <br>
-          <% end %>
           <% counter += 1 %>
         <% end %>
       </div>
