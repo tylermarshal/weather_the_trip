@@ -25,7 +25,7 @@
     <% end %>
     <h4><%= link_to "Add Destinations to Trip", edit_user_trip_path %></h4>
   </div>
-  <% if @trip.destinations.count > 2 %>
+  <% if @trip.destinations.count >= 2 %>
   <iframe
     width="600"
     height="450"
