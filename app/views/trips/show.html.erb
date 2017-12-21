@@ -13,12 +13,11 @@
     <% else %>
       <div class="route-container">
         <% counter = 1 %>
-        <% total_time = 0 %>
         <% @trip.destinations.each do |destination| %>
           <p><%= counter %>: <%= link_to "#{destination.city}, #{destination.state}", destination_path(destination) %></p>
           <p><%= link_to "Remove From Trip", destination_route_path(destination), method: :delete %></p>
           <% if counter != 1 %>
-            <p>Travel Time to Destination: <%= @trip.directions(@trip.destinations[counter-2],destination) %></p><br>
+            <p>Travel Time to Destination: <% trip_seconds = @trip.directions(@trip.destinations[counter-2],destination) %><%= (trip_seconds.to_f/60/60).round(2) %> Hours</p><br>
           <% else %>
             <br>
           <% end %>
@@ -28,15 +27,17 @@
     <% end %>
     <h4><%= link_to "Add Destinations to Trip", edit_user_trip_path %></h4>
   </div>
+  <% if @trip.destinations.count > 2 %>
   <iframe
     width="600"
     height="450"
     frameborder="0" style="border:0"
     src="https://www.google.com/maps/embed/v1/directions?key=<%= ENV["gmaps_key"] %>&origin=<%= @trip.destinations.first.city.gsub(" ", "+") %>,<%= @trip.destinations.first.state %>&destination=<%= @trip.destinations[1].city.gsub(" ", "+") %>,<%= @trip.destinations[1].state %>" allowfullscreen>
   </iframe>
+  <% end %>
 </div>
 <div class="bottom-right">
-  <p><%= link_to "Delete Trip", user_trip_path(current_user, @trip), method: :delete, class: "trip-delete" %></p>
+  <p><%= link_to "Delete Trip", user_trip_path(current_user, @trip), method: :delete, class: "trip-delete", data: {confirm: "Really delete this trip?"} %></p>
 </div>
 <br>
 <br>
