@@ -21,7 +21,6 @@ class ApplicationController < ActionController::Base
 
   def current_trip
     @current_trip ||= Trip.find(session[:trip_id]) if session[:trip_id]
-    # create new trip and then edit the trip with new destiantions
   end
 
   def current_trip?

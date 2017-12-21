@@ -44,6 +44,8 @@ class TripsController < ApplicationController
 
   def destroy
     @trip.destroy
+    session.delete(:trip_id)
+    @current_trip = nil
 
     flash.notice = "Trip #{@trip.name} has been delete."
     redirect_to user_trips_path(current_user)
