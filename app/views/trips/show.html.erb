@@ -11,14 +11,28 @@
     <% else %>
       <div class="route-container">
         <% counter = 1 %>
+        <% total_time = 0 %>
         <% @trip.destinations.each do |destination| %>
           <p><%= counter %>: <%= link_to "#{destination.city}, #{destination.state}", destination_path(destination) %></p>
-          <p><%= link_to "Remove From Trip", destination_route_path(destination), method: :delete %></p>
           <% if counter != 1 %>
-            <p>Travel Time to Destination: <% trip_seconds = @trip.directions(@trip.destinations[counter-2],destination) %><%= (trip_seconds.to_f/60/60).round(2) %> Hours</p><br>
+            <p>Travel Time to Destination: <% trip_seconds = @trip.directions(@trip.destinations[counter-2],destination) %><%= (trip_seconds.to_f/60/60).round(2) %> Hours</p>
+            <% total_time += trip_seconds %>
+            <% forecast_time = Time.now + total_time + (-@trip.timezone(@trip.destinations[counter-2])+@trip.timezone(destination)) %>
+            <% weather = @trip.forecast(destination, forecast_time) %>
+            <p>Conditions: <%= weather["summary"] %></p>
+            <p>Temperature: <%= weather["temperature"] %>° F</p>
+            <p>Chance of Precip: <%= weather["precipProbability"]*100 %>%</p>
+            <p>Wind: <%= weather["windSpeed"] %> MPH</p>
+            <p>Visibility: <%= (weather["visibility"]*0.621371).round(2) %> Miles</p>
           <% else %>
-            <br>
+            <% weather = @trip.forecast(destination, Time.now) %>
+            <p>Conditions: <%= weather["summary"] %></p>
+            <p>Temperature: <%= weather["temperature"] %>° F</p>
+            <p>Chance of Precip: <%= weather["precipProbability"]*100 %>%</p>
+            <p>Wind: <%= weather["windSpeed"] %> MPH</p>
+            <p>Visibility: <%= (weather["visibility"]*0.621371).round(2) %> Miles</p>
           <% end %>
+          <p><%= link_to "Remove From Trip", destination_route_path(destination), method: :delete %></p><br>
           <% counter += 1 %>
         <% end %>
       </div>
