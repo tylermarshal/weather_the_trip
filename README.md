@@ -4,7 +4,7 @@
 
 [Try it out on Heroku](https://weather-the-trip.herokuapp.com/)
 
-[![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)]()
+[![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)](#)
 
 ## Setup & Installation
 
