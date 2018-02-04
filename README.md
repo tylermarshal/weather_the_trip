@@ -44,7 +44,7 @@ Destination.all
 
 ### API Setup
 
-Weather the Trip uses the Google Maps, Google Directions, Google Timezone, and Dark Sky Weather. You will need to acquire a Google Maps API key https://developers.google.com/maps/documentation/embed/get-api-key and a Dark Sky API key https://darksky.net/dev.
+Weather the Trip uses the Google Maps, Google Directions, Google Timezone, and Dark Sky Weather APIs. You will need to acquire a Google Maps API key https://developers.google.com/maps/documentation/embed/get-api-key and a Dark Sky API key https://darksky.net/dev.
 
 To safely add these to your project, you will need to setup Figaro:
 
